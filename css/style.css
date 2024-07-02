@@ -1,3 +1,4 @@
+/* 기존 CSS 내용은 유지 */
 body {
     font-family: Arial, sans-serif; /* 기본 폰트 설정 */
     margin: 0; /* 페이지의 기본 여백 제거 */
@@ -106,12 +107,18 @@ body {
     background-color: #d3d3d3; /* 배경색을 회색으로 설정 */
     padding: 10px; /* 패딩 설정 */
 }
-.category div {
+.category button {
     flex-grow: 1; /* 남은 공간 모두 사용 */
     text-align: center; /* 텍스트 중앙 정렬 */
     padding: 10px; /* 패딩 설정 */
+    background: none; /* 버튼 배경색 제거 */
+    border: none; /* 버튼 테두리 제거 */
+    cursor: pointer; /* 커서를 포인터로 변경 */
 }
-
+.category button:hover {
+    background-color: #999; /* 호버 시 버튼 배경색을 회색으로 변경 */
+    color: white;
+}
 .cards {
     display: flex; /* 플렉스 박스 사용 */
     flex-wrap: wrap; /* 여러 줄로 요소를 배치 */
