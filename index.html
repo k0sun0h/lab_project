@@ -3,33 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>페이지 첫 화면</title>
+    <title>중고거래</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/script.js"></script>
+    <script defer src="./js/script.js"></script> <!-- 스크립트를 비동기로 로드 -->
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-            <img src="./img/Logo.png" alt="로고">
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="검색어를 입력하세요">
-        </div>
-        <div class="auth-buttons">
-            <button>장바구니</button>
-            <button>로그아웃</button>
+    <header class="top-bar">
+        <img src="./img/Logo.png" alt="로고" class="logo">
+        <div class="top-bar-buttons">
+            <button onclick="window.open('mypage.html', '_blank')">마이페이지</button> <!-- 새 창에서 마이페이지 열기 -->
+            <button onclick="window.open('cart.html', '_blank')">장바구니</button> <!-- 새 창에서 장바구니 열기 -->
+            <button onclick="window.open('login.html', '_blank')">로그인</button> <!-- 새 창에서 로그인 페이지 열기 -->
         </div>
     </header>
-    <nav class="menu-bar">
-        <button>☰</button>
-        <button>인기순</button>
-        <button>고가순</button>
-        <button>저가순</button>
-        <button>최신순</button>
-    </nav>
+    <div class="search-bar">
+        <button class="menu-icon"><img src="./img/icon1.png" alt="메뉴" class="icon"></button>
+        <div class="search-input-container">
+            <input type="text" placeholder="검색창" class="search-input">
+        </div>
+    </div>
     <main class="content">
         <div class="breadcrumb">
-            홈 > 전체보기
+            <span>홈 > 전체보기</span>
+            <div class="menu-bar">
+                <button>인기순</button>
+                <span>|</span>
+                <button>고가순</button>
+                <span>|</span>
+                <button>저가순</button>
+                <span>|</span>
+                <button>최신순</button>
+            </div>
         </div>
         <div class="category">
             <div>전체보기</div>
@@ -39,70 +43,20 @@
             <div>모자</div>
             <div>기타</div>
         </div>
-        <section class="cards">
-            <!-- 카드 리스트 -->
-            <div class="card">
-                <img src="item1.jpg" alt="상품 이미지">
-                <h3>상품 이름</h3>
-                <p>상품 가격</p>
-                <p>최신 업데이트</p>
-            </div>
-            <div class="card">
-                <img src="item2.jpg" alt="상품 이미지">
-                <h3>상품 이름</h3>
-                <p>상품 가격</p>
-                <p>최신 업데이트</p>
-            </div>
-            <div class="card">
-                <img src="item3.jpg" alt="상품 이미지">
-                <h3>상품 이름</h3>
-                <p>상품 가격</p>
-                <p>최신 업데이트</p>
-            </div>
-            <div class="card">
-                <img src="item4.jpg" alt="상품 이미지">
-                <h3>상품 이름</h3>
-                <p>상품 가격</p>
-                <p>최신 업데이트</p>
-            </div>
-            <!-- 추가 카드들 (임시로 빈 카드 포함) -->
-            <div class="card">
-                <img src="" alt="상품 이미지">
-                <h3>상품 이름</h3>
-                <p>상품 가격</p>
-                <p>최신 업데이트</p>
-            </div>
-            <div class="card">
-                <img src="" alt="상품 이미지">
-                <h3>상품 이름</h3>
-                <p>상품 가격</p>
-                <p>최신 업데이트</p>
-            </div>
-            <div class="card">
-                <img src="" alt="상품 이미지">
-                <h3>상품 이름</h3>
-                <p>상품 가격</p>
-                <p>최신 업데이트</p>
-            </div>
-            <div class="card">
-                <img src="" alt="상품 이미지">
-                <h3>상품 이름</h3>
-                <p>상품 가격</p>
-                <p>최신 업데이트</p>
-            </div>
-            <!-- 더 많은 카드들... -->
+        <section class="cards" id="cards-container">
+            <!-- 카드 리스트가 JavaScript로 추가됩니다. -->
         </section>
     </main>
     <div class="pagination">
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
+        <button>1</button> <!-- 페이지 번호 1 -->
+        <button>2</button> <!-- 페이지 번호 2 -->
+        <button>3</button> <!-- 페이지 번호 3 -->
+        <button>4</button> <!-- 페이지 번호 4 -->
+        <button>5</button> <!-- 페이지 번호 5 -->
+        <button>6</button> <!-- 페이지 번호 6 -->
+        <button>7</button> <!-- 페이지 번호 7 -->
+        <button>8</button> <!-- 페이지 번호 8 -->
+        <button>9</button> <!-- 페이지 번호 9 -->
     </div>
 </body>
 </html>
