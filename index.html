@@ -5,17 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 뷰포트 설정으로 모바일 대응 -->
     <title>중고거래</title> <!-- 문서 제목 -->
     <link rel="stylesheet" href="./css/style.css"> <!-- 외부 스타일시트 연결 -->
-    <script src="./js/script.js"></script> <!-- 외부 스크립트 연결 -->
+    <script defer src="./js/script.js"></script> <!-- 외부 스크립트 연결 (defer 사용) -->
 </head>
 <body>
     <header class="top-bar">
         <img src="./img/Logo.png" alt="로고" class="logo"> <!-- 로고 이미지 -->
-        <div class="top-bar-buttons">
-            <button><img src="./img/icon2.png" alt="알림" class="icon"></button> <!-- 알림 버튼 -->
-            <button>마이페이지</button> <!-- 마이페이지 버튼 -->
-            <button>장바구니</button> <!-- 장바구니 버튼 -->
-            <button>로그인</button> <!-- 로그인 버튼 -->
-        </div>
+        <div class="top-bar-buttons" id="top-bar-buttons"></div> <!-- 상단바 버튼 -->
     </header>
     <div class="search-bar">
         <div class="search-input-container">
@@ -26,118 +21,12 @@
     <main class="content">
         <div class="breadcrumb">
             <span>홈 > 전체보기</span> <!-- 위치 표시 -->
-            <div class="menu-bar">
-                <button>인기순</button> <!-- 인기순 버튼 -->
-                <span>|</span> <!-- 구분선 -->
-                <button>고가순</button> <!-- 고가순 버튼 -->
-                <span>|</span> <!-- 구분선 -->
-                <button>저가순</button> <!-- 저가순 버튼 -->
-                <span>|</span> <!-- 구분선 -->
-                <button>최신순</button> <!-- 최신순 버튼 -->
-            </div>
+            <div class="menu-bar" id="menu-bar"></div> <!-- 메뉴바 -->
         </div>
         
-        <div class="category">
-            <div>전체보기</div> <!-- 전체보기 카테고리 -->
-            <div>상의</div> <!-- 상의 카테고리 -->
-            <div>하의</div> <!-- 하의 카테고리 -->
-            <div>신발</div> <!-- 신발 카테고리 -->
-            <div>모자</div> <!-- 모자 카테고리 -->
-            <div>기타</div> <!-- 기타 카테고리 -->
-        </div>
-        <section class="cards">
-            <div class="card">
-                <img src="item.jpg" alt="상품 사진" class="card-image">
-                <div class="card-details">
-                    <div class="card-name">상품 이름</div>
-                    <div class="card-info">
-                        <span class="card-price">상품 가격</span>
-                        <span class="card-time">몇 시간 전 업로드?</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="item.jpg" alt="상품 사진" class="card-image">
-                <div class="card-details">
-                    <div class="card-name">상품 이름</div>
-                    <div class="card-info">
-                        <span class="card-price">상품 가격</span>
-                        <span class="card-time">몇 시간 전 업로드?</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="item.jpg" alt="상품 사진" class="card-image">
-                <div class="card-details">
-                    <div class="card-name">상품 이름</div>
-                    <div class="card-info">
-                        <span class="card-price">상품 가격</span>
-                        <span class="card-time">몇 시간 전 업로드?</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="item.jpg" alt="상품 사진" class="card-image">
-                <div class="card-details">
-                    <div class="card-name">상품 이름</div>
-                    <div class="card-info">
-                        <span class="card-price">상품 가격</span>
-                        <span class="card-time">몇 시간 전 업로드?</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="item.jpg" alt="상품 사진" class="card-image">
-                <div class="card-details">
-                    <div class="card-name">상품 이름</div>
-                    <div class="card-info">
-                        <span class="card-price">상품 가격</span>
-                        <span class="card-time">몇 시간 전 업로드?</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="item.jpg" alt="상품 사진" class="card-image">
-                <div class="card-details">
-                    <div class="card-name">상품 이름</div>
-                    <div class="card-info">
-                        <span class="card-price">상품 가격</span>
-                        <span class="card-time">몇 시간 전 업로드?</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="item.jpg" alt="상품 사진" class="card-image">
-                <div class="card-details">
-                    <div class="card-name">상품 이름</div>
-                    <div class="card-info">
-                        <span class="card-price">상품 가격</span>
-                        <span class="card-time">몇 시간 전 업로드?</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="item.jpg" alt="상품 사진" class="card-image">
-                <div class="card-details">
-                    <div class="card-name">상품 이름</div>
-                    <div class="card-info">
-                        <span class="card-price">상품 가격</span>
-                        <span class="card-time">몇 시간 전 업로드?</span>
-                    </div>
-                </div>
-            </div>                                                                                                                                      
-        </section>
+        <div class="category" id="category"></div> <!-- 카테고리 -->
+        <section class="cards" id="cards"></section> <!-- 상품 카드 -->
     </main>
-    <div class="pagination">
-        <button>1</button> <!-- 페이지 번호 1 -->
-        <button>2</button> <!-- 페이지 번호 2 -->
-        <button>3</button> <!-- 페이지 번호 3 -->
-        <button>4</button> <!-- 페이지 번호 4 -->
-        <button>5</button> <!-- 페이지 번호 5 -->
-        <button>6</button> <!-- 페이지 번호 6 -->
-        <button>7</button> <!-- 페이지 번호 7 -->
-        <button>8</button> <!-- 페이지 번호 8 -->
-        <button>9</button> <!-- 페이지 번호 9 -->
-    </div>
+    <div class="pagination" id="pagination"></div> <!-- 페이지네이션 -->
 </body>
 </html>
