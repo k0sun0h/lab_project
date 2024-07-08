@@ -1,0 +1,104 @@
+html, body {
+    margin: 0; /* 기본 마진 제거 */
+    padding: 0; /* 기본 패딩 제거 */
+    overflow: hidden; /* 스크롤 바 숨기기 */
+    width: 100%; /* 전체 너비를 100%로 설정 */
+    height: 100%; /* 전체 높이를 100%로 설정 */
+}
+
+body {
+    font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+    background-color: #f4f4f4; /* 페이지 배경색 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.login-container form input {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container form button {
+    padding: 10px;
+    background-color: #888;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.login-container form button:hover {
+    background-color: #555;
+}
+
+hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.naver {
+    background-color: #1ec800;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.kakao {
+    background-color: #ffeb00;
+    color: #3c1e1e;
+}
+
+.email-login-signup {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.email-login-signup a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.email-login-signup a:hover {
+    text-decoration: underline;
+}
