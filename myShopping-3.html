@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마이페이지</title>
+    <title>마이페이지 > 내 쇼핑</title>
     <link rel="stylesheet" href="./css/mystyle.css">
-
 </head>
 <body>
     <header class="top-bar">
@@ -21,7 +20,7 @@
         <main class="content">
             <div class="breadcrumb">
                 <span>홈 > 마이페이지</span> <!-- 위치 표시 -->
-                <div class="menu-bar" id="menu-bar"></div> <!-- 메뉴바 -->
+                <div class="menu-bar"></div> <!-- 메뉴바(지움) -->
             </div>
 
             <div class="container">
@@ -30,14 +29,14 @@
                     <div class="Myoo">
                         <h2>My 쇼핑</h2>
                         <p><a href="./myShopping.html">주문 목록</a></p>
-                        <p><a href="./myShopping.html">배송 관리</a></p>
-                        <p><a href="./myShopping.html">영수증 조회 / 출력</a></p>
+                        <p><a href="./myShopping-2.html">배송 관리</a></p>
+                        <p><a href="./myShopping-3.html" class="blue">영수증 조회 / 출력</a></p>
                     </div>
                     <div class="Myoo">
                         <h2>My 활동</h2>
                         <p><a href="./myact.html">문의하기</a></p>
-                        <p><a href="./myact.html">문의내역 확인</a></p>
-                        <p><a href="./myact.html">찜 목록</a></p>
+                        <p><a href="./myact-2.html">문의내역 확인</a></p>
+                        <p><a href="./myact-4.html">찜 목록</a></p>
                     </div>
                     <div class="Myoo">
                         <h2>My 거래</h2>
@@ -51,15 +50,12 @@
                     </div>
                 </div>  
                 <div class="Myp-box"> <!--박스 겉 테두리-->
+                    <div class="Mycontents">
+                        <h2>영수증 조회 / 출력</h2>
+                    </div>
                 </div>
             </div>          
         </main>
-        <script>
-            // JavaScript로 클릭 이벤트 처리
-            document.getElementById('myLink').addEventListener('click', function(event) {
-                event.preventDefault(); // 기본 동작 방지 (필요에 따라 제거 가능)
-                this.classList.add('clicked'); // 클릭된 상태로 설정
-            });
-        </script>
+        <script src="./js/script.js"></script>
     </body>
 </html>

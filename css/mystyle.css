@@ -1,0 +1,379 @@
+body {
+  font-family: Arial, sans-serif; /* 기본 폰트 설정 */
+  margin: 0; /* 페이지의 기본 여백 제거 */
+  padding: 0; /* 페이지의 기본 패딩 제거 */
+  background-color: #f4f4f4; /* 페이지 배경색 설정 */
+}
+.top-bar {
+  background-color: #333; /* 진한 회색 배경색 */
+  color: #fff; /* 텍스트 색상을 흰색으로 설정 */
+  display: flex; /* 플렉스 박스 사용 */
+  justify-content: space-between; /* 로고와 버튼들을 양쪽 끝으로 배치 */
+  align-items: center; /* 수직 중앙 정렬 */
+  padding: 10px 20px; /* 상하 10px, 좌우 20px 패딩 */
+}
+.top-bar .logo {
+  width: 40px; /* 로고의 너비 설정 */
+  background-color: #fff; /* 로고 배경을 흰색으로 설정 */
+  padding: 5px; /* 로고 주위에 5px 패딩 */
+  border-radius: 50%; /* 로고를 원형으로 만들기 위한 설정 */
+}
+.top-bar .top-bar-buttons {
+  display: flex; /* 내부 요소들을 플렉스 박스로 배치 */
+  gap: 10px; /* 각 버튼 사이의 간격을 10px로 설정 */
+}
+
+.top-bar .top-bar-buttons button {
+  background: #fff; /* 버튼 배경색을 흰색으로 설정 */
+  border: 2px; /* 버튼 테두리 두께 설정 */
+  color: #000000; /* 버튼 텍스트 색상 설정 */
+  font-size: 16px; /* 버튼 폰트 크기 설정 */
+  cursor: pointer; /* 커서를 포인터로 변경 */
+}
+.top-bar .top-bar-buttons button:hover {
+  background-color: #555; /* 호버 시 버튼 배경색을 진한 회색으로 변경 */
+  color: white; /* 호버 시 버튼 텍스트 색상을 흰색으로 변경 */
+}
+.top-bar .top-bar-buttons img {
+  display: flex; /* 플렉스 박스 사용 */
+  justify-content: center; /* 수평 중앙 정렬 */
+  align-items: center; /* 수직 중앙 정렬 */
+}
+.top-bar .icon {
+  width: 16px; /* 아이콘 너비 설정 */
+  height: 16px; /* 아이콘 높이 설정 */
+}
+.search-bar {
+  background-color: #fff; /* 배경색을 흰색으로 설정 */
+  display: flex; /* 플렉스 박스 사용 */
+  align-items: center; /* 수직 중앙 정렬 */
+  padding: 10px 20px; /* 상하 10px, 좌우 20px 패딩 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+.search-bar .menu-icon img {
+  width: 16px; /* 아이콘 너비 설정 */
+  height: 16px; /* 아이콘 높이 설정 */
+}
+.search-bar .search-input-container {
+  display: flex; /* 플렉스 박스 사용 */
+  align-items: center; /* 수직 중앙 정렬 */
+  flex-grow: 1; /* 남은 공간 모두 사용 */
+  position: relative; /* 위치 설정 */
+}
+.search-bar .search-input-container .search-icon {
+  position: absolute; /* 절대 위치 설정 */
+  left: 10px; /* 왼쪽으로 10px 위치 */
+  width: 16px; /* 아이콘 너비 설정 */
+  height: 16px; /* 아이콘 높이 설정 */
+}
+.search-bar input {
+  width: 100%; /* 입력창 너비를 100%로 설정 */
+  padding: 5px 5px 5px 30px; /* 상하 5px, 좌우 30px 패딩 */
+  margin: 0 10px; /* 좌우 여백 10px */
+  font-size: 16px; /* 폰트 크기 설정 */
+}
+.breadcrumb {
+  display: flex; /* 플렉스 박스 사용 */
+  justify-content: space-between; /* 좌우로 요소들을 배치 */
+  align-items: center; /* 수직 중앙 정렬 */
+  margin-bottom: 10px; /* 하단 여백 10px */
+  font-size: 18px; /* 폰트 크기 설정 */
+}
+.menu-bar {
+  display: flex; /* 플렉스 박스 사용 */
+  font-size: 18px; /* 폰트 크기 설정 */
+}
+.menu-bar button {
+  background: none; /* 버튼 배경색 제거 */
+  border: none; /* 버튼 테두리 제거 */
+  cursor: pointer; /* 커서를 포인터로 변경 */
+}
+.menu-bar button:hover {
+  background-color: #999; /* 호버 시 버튼 배경색을 회색으로 변경 */
+  color: white;
+}
+.menu-bar span {
+  margin: 0 5px; /* 구분선의 좌우 간격 설정 */
+}
+.content {
+  display: flex; /* 플렉스 박스 사용 */
+  padding: 20px; /* 패딩 설정 */
+  flex-direction: column; /* 플렉스 방향을 컬럼으로 설정 */
+}
+
+
+
+.left-Mybar { /*마이페이지 왼쪽 사이드 바*/
+  width: 170px;
+  height: 100%;
+  float: left;
+  margin: 0;
+  background-color: #e9e9e9; 
+}
+.Myoo {    /*My쇼핑, My 활동 등등의 구역 */
+  margin: 10px;
+  background-color: #e9e9e9;
+  margin: 10px;
+  margin-bottom: 50px;
+}
+.Mycontents { /*마이페이지 테두리 안의 내용*/
+  margin: 5px 20px;
+}
+a {
+  text-decoration: none; /* 기본적으로 밑줄 제거 */
+  color: black; /* 기본 색상 유지 */
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline; /* 마우스 올리면 밑줄 표시 */
+}
+
+.blue {
+  color: blue;
+}
+
+
+.Myp-box {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #d1d1d1;
+  margin: 0;
+  background-color: #f4f4f4; 
+  }
+.container {
+  display: grid;
+  justify-content: start;
+  grid-auto-flow: column;
+  grid-template-columns: 175px 1fr;
+  gap: 5px; /* div 사이 간격 조절 */
+}
+p {
+  margin: 2px;
+}
+.wishlist {
+  margin: 15px; /*찜 목록 마진*/
+}
+.wishes {
+  background-color: #e9e9e9;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+}
+/* .wish-contents { */
+  
+/* } */
+.wish-container {
+  display: grid;
+  justify-content: start;
+  grid-auto-flow: column;
+  /* grid-template-columns:  */
+
+}
+.Namebox { /*리뷰관리에서 프로필 정보 상자*/
+  width: 100%;
+  height: 90px;
+  border: 1px solid #d1d1d1;
+  border-top-color: blue;
+}
+.circle-1 {
+  width:80px; /*프로필 사진용*/
+  height: 80px;
+  border-radius: 50%;
+  background-color: #cecece;
+  margin: 5px;
+}
+.line { /*Namebox 속 line*/
+  border-left: 1px solid #d1d1d1;
+  height: 60px;
+  margin-left: 30px;
+  margin-top: 15px;
+}
+.review-button {
+  width: 50%;
+  background-color: gray; /* 버튼 배경 색상 */
+  border-top-color: black;
+  border-right-color: #ffffff;
+  border-bottom-color: #ffffff;
+  border-left-color: #e9e9e9;
+  color: black; /* 글자 색상 */
+  padding: 20px 32px; /* 패딩 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+  display: inline-block; /* 인라인 블록 요소 */
+  font-size: 30px; /* 글자 크기 */
+  margin: 20px 0px; /* 외부 여백 */
+  cursor: pointer; /* 커서 모양 변경 */
+  /* border-radius: 4px; 모서리 둥글게 */
+}
+
+.review-button.active {
+  background-color: #e9e9e9;
+}
+
+.review-content {
+  display: none;
+  margin:10px;
+  height: 80px;
+  background-color: rgb(155, 155, 155);
+}
+
+.review-content.active {
+  display: block;
+}
+
+.review-list {
+  height: 100%;
+}
+
+#password {
+  margin: 30px;
+  width: 50%;
+}
+
+.text-container {
+    text-align: center;
+  }
+  
+  .clickable-text {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .container-1 { /*리뷰관리 프로필창 컨테이너 */
+    display: grid;
+    justify-content: start;
+    grid-auto-flow: column;
+    grid-template-columns: 175px 1fr;
+    gap: 5px; /* div 사이 간격 조절 */
+}
+.container-2 { /*리뷰관리 프로필창 컨테이너 */
+    display: flex;
+        flex-direction: row; /* 기본값이므로 생략 가능 */
+        gap: 0px; /* div 요소들 간의 간격 설정 */
+}
+
+.tab {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #e9e9e9;
+  color: black;
+  border: 1px solid #cccccc;
+  border-bottom: none;
+  
+}
+
+.tab.active {
+  background-color: #ccc;
+  border: 2px solid blue;
+  border-bottom: none;
+  color: black;
+}
+
+.tab-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid blue;
+  height: 75.5%;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.trade-content {
+
+}
+
+.trade-picture {
+  background-color: #ccc;
+  width: 140px;
+  height: 120px;
+  margin: 0 50px;
+}
+
+.column1 {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.nickname {
+  padding-left: 40px;
+  font-size: 13px;
+  margin: 10px;
+}
+
+.width-liner {
+  margin-top: 35px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.more-see-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  /* padding: 20px; */
+  box-sizing: border-box;
+}
+
+.more-button {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  padding-bottom: 0;
+  border-bottom: 1px solid #000000;
+  margin-bottom: 10px;
+  margin-bottom: 0;
+}
+
+.chatting {
+  /* margin: 20px 10px; */
+  padding:10px;
+  border-bottom: 1px solid #b1b1b1;
+  
+  
+}
+
+.chat-elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+}
+
+.item1 {
+  width: 100px;
+  height: 85px;
+  background-color: #909090;
+  margin: 0 10% 0 0;
+}
+
+.item2 {
+  width: 100px;
+  height: 85px;
+  background-color: #909090;
+  margin: 0;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 200px;
+
+}
+
+.right-align {
+  margin-left: auto;
+}

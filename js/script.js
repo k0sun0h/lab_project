@@ -113,62 +113,73 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// JavaScript로 클릭 이벤트 처리
+//document.getElementById('myLink').addEventListener('click', function(event) {
+  //  event.preventDefault(); // 기본 동작 방지 (필요에 따라 제거 가능)
+    //this.classList.add('clicked'); // 클릭된 상태로 설정
+//});
 
+//document.getElementById('passwordForm').addEventListener('submit', function(event) {
+//    event.preventDefault();
+ //   const password = document.getElementById('password').value;
+   // const correctPassword = '1234'; // 실제로는 서버에서 검증해야 합니다.
 
-document.addEventListener("DOMContentLoaded", function() {
-    // 카카오 로그인 초기화
-    Kakao.init('abc123'); // 카카오 앱 키를 입력하세요.
+//    if (password === correctPassword) {
+  //      window.location.href = 'personal_info.html';
+  //  } else {
+   //     document.getElementById('errorMessage').style.display = 'block';
+   // }
+//});
 
-    document.getElementById('kakao-login-btn').addEventListener('click', function() {
-        Kakao.Auth.login({
-            success: function(authObj) {
-                console.log(authObj);
-                // 로그인 성공 후 처리할 코드
-            },
-            fail: function(err) {
-                console.error(err);
+        function openTab(event, tabId) {
+            var i, tabcontent, tablinks;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
             }
+
+            // Remove active class from all tabs
+            tablinks = document.getElementsByClassName("tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab content and add an "active" class to the tab
+            document.getElementById(tabId).style.display = "block";
+            event.currentTarget.className += " active";
+        }
+
+        // By default, open the first tab
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementsByClassName("tab")[0].click();
         });
-    });
 
-    // 페이스북 SDK 초기화
-    window.fbAsyncInit = function() {
-        FB.init({
-            appId: '1234567890', // 페이스북 앱 ID를 입력하세요.
-            cookie: true,
-            xfbml: true,
-            version: 'v11.0'
+
+        function changeTab(event, tabName) {
+            // 모든 탭의 active 클래스 제거
+            const tabs = document.querySelectorAll('.review-button');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+        
+            // 클릭된 탭에 active 클래스 추가
+            event.currentTarget.classList.add('active');
+        
+            // 모든 탭 콘텐츠 숨기기
+            const tabContents = document.querySelectorAll('.review-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+        
+            // 선택된 탭 콘텐츠 표시
+            const selectedContent = document.getElementById(tabName);
+            selectedContent.classList.add('active');
+        }
+        
+        // 첫 번째 탭과 콘텐츠를 기본 활성화 상태로 설정
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.review-button').click();
         });
-
-        document.getElementById('facebook-login-btn').addEventListener('click', function() {
-            FB.login(function(response) {
-                if (response.status === 'connected') {
-                    console.log('Logged in.');
-                    // 로그인 성공 후 처리할 코드
-                } else {
-                    console.log('User cancelled login or did not fully authorize.');
-                }
-            }, {scope: 'public_profile,email'}); // 필요한 권한 추가
-        });
-    };
-
-    // 네이버 로그인 초기화 및 버튼 이벤트
-    var naverLogin = new naver.LoginWithNaverId({
-        clientId: "naverClientId123", // 네이버 클라이언트 ID를 입력하세요.
-        callbackUrl: "https://example.com/callback", // 네이버 콜백 URL을 입력하세요.
-        isPopup: true, // 팝업 여부 설정
-        loginButton: {color: "green", type: 3, height: 40}
-    });
-
-    naverLogin.init();
-
-    document.getElementById('naver-login-btn').addEventListener('click', function() {
-        naverLogin.authorize(); // 네이버 로그인 인증 요청
-    });
-});
-
-
-//회원가입 관련
-document.addEventListener("DOMContentLoaded", function() {
-    // 여기서 필요에 따라 추가 스크립트를 작성
-});
+        
