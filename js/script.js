@@ -113,6 +113,71 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // 카카오 로그인 초기화
+    Kakao.init('abc123'); // 카카오 앱 키를 입력하세요.
+
+    document.getElementById('kakao-login-btn').addEventListener('click', function() {
+        Kakao.Auth.login({
+            success: function(authObj) {
+                console.log(authObj);
+                // 로그인 성공 후 처리할 코드
+            },
+            fail: function(err) {
+                console.error(err);
+            }
+        });
+    });
+
+    // 페이스북 SDK 초기화
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '1234567890', // 페이스북 앱 ID를 입력하세요.
+            cookie: true,
+            xfbml: true,
+            version: 'v11.0'
+        });
+
+        document.getElementById('facebook-login-btn').addEventListener('click', function() {
+            FB.login(function(response) {
+                if (response.status === 'connected') {
+                    console.log('Logged in.');
+                    // 로그인 성공 후 처리할 코드
+                } else {
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            }, {scope: 'public_profile,email'}); // 필요한 권한 추가
+        });
+    };
+
+    // 네이버 로그인 초기화 및 버튼 이벤트
+    var naverLogin = new naver.LoginWithNaverId({
+        clientId: "naverClientId123", // 네이버 클라이언트 ID를 입력하세요.
+        callbackUrl: "https://example.com/callback", // 네이버 콜백 URL을 입력하세요.
+        isPopup: true, // 팝업 여부 설정
+        loginButton: {color: "green", type: 3, height: 40}
+    });
+
+    naverLogin.init();
+
+    document.getElementById('naver-login-btn').addEventListener('click', function() {
+        naverLogin.authorize(); // 네이버 로그인 인증 요청
+    });
+});
+
+
+//회원가입 관련
+document.addEventListener("DOMContentLoaded", function() {
+    // 여기서 필요에 따라 추가 스크립트를 작성
+});
+
+
+
+
+
+//유리님 코드
 // JavaScript로 클릭 이벤트 처리
 //document.getElementById('myLink').addEventListener('click', function(event) {
   //  event.preventDefault(); // 기본 동작 방지 (필요에 따라 제거 가능)
