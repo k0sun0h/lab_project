@@ -1,33 +1,46 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8"> <!-- 문서의 문자 인코딩 설정 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 뷰포트 설정으로 모바일 대응 -->
-    <title>중고거래</title> <!-- 문서 제목 -->
-    
-    <link rel="stylesheet" href="./css/style.css"> <!-- 외부 스타일시트 연결 -->
-    <script defer src="./js/script.js"></script> <!-- 외부 스크립트 연결 (defer 사용) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중고거래</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/script.js"></script>
 </head>
 <body>
     <header class="top-bar">
-        <img src="./img/Logo.png" alt="로고" class="logo"> <!-- 로고 이미지 -->
-        <div class="top-bar-buttons" id="top-bar-buttons"></div> <!-- 상단바 버튼 -->
+        <img src="./img/Logo.png" alt="로고" class="logo">
+        <div class="top-bar-buttons" id="top-bar-buttons"></div>
     </header>
     <div class="search-bar">
         <div class="search-input-container">
-            <img src="./img/icon1.png" style="padding: 10px;" alt="검색" class="search-icon"> <!-- 검색 아이콘 -->
-            <input type="text" placeholder="검색창"> <!-- 검색 입력창 -->
+            <img src="./img/icon1.png" style="padding: 10px;" alt="검색" class="search-icon">
+            <input type="text" placeholder="검색창">
         </div>
     </div>
     <main class="content">
         <div class="breadcrumb">
-            <span>홈 > 전체보기</span> <!-- 위치 표시 -->
-            <div class="menu-bar" id="menu-bar"></div> <!-- 메뉴바 -->
+            <span>홈 > 전체보기</span>
+            <div class="menu-bar" id="menu-bar"></div>
         </div>
         
-        <div class="category" id="category"></div> <!-- 카테고리 -->
-        <section class="cards" id="cards"></section> <!-- 상품 카드 -->
+        <div class="category" id="category"></div>
+        <section class="cards" id="cards"></section>
     </main>
-    <div class="pagination" id="pagination"></div> <!-- 페이지네이션 -->
+    <div class="pagination" id="pagination"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const topBarButtonsContainer = document.getElementById("top-bar-buttons");
+
+            const cartButton = document.createElement("button");
+            cartButton.textContent = "장바구니";
+            cartButton.addEventListener("click", () => {
+                window.location.href = "cart.html";
+            });
+
+            topBarButtonsContainer.appendChild(cartButton);
+        });
+    </script>
 </body>
 </html>

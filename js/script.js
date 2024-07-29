@@ -174,6 +174,144 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    function loadCartItems() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalContainer = document.getElementById('total-price');
+        const itemCountContainer = document.getElementById('item-count');
+
+        const cartItems = [
+            { name: '상품 이름1', price: 10000, quantity: 1, img: 'img/item1.jpg' },
+            { name: '상품 이름2', price: 20000, quantity: 2, img: 'img/item2.jpg' },
+            { name: '상품 이름3', price: 15000, quantity: 1, img: 'img/item3.jpg' },
+            { name: '상품 이름4', price: 50000, quantity: 1, img: 'img/item4.jpg' }
+        ];
+
+        let total = 0;
+
+        cartItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'cart-item';
+            itemElement.innerHTML = `
+                <img src="${item.img}" alt="${item.name}">
+                <span>${item.name}</span>
+                <span>${item.price}원</span>
+                <span>수량: ${item.quantity}</span>
+                <div class="actions">
+                    <button>수정</button>
+                    <button>삭제</button>
+                </div>
+            `;
+            cartItemsContainer.appendChild(itemElement);
+
+            total += item.price * item.quantity;
+        });
+
+        cartTotalContainer.textContent = `${total} 원`;
+        itemCountContainer.textContent = cartItems.length;
+
+        document.getElementById('checkout-button').addEventListener('click', function() {
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            localStorage.setItem('totalPrice', total);
+            window.location.href = 'checkout.html';
+        });
+    }
+
+    function loadWishlistItems() {
+        const wishlistItemsContainer = document.getElementById('wishlist-items');
+        const wishlistCountContainer = document.getElementById('wishlist-count');
+
+        const wishlistItems = [
+            { name: '상품 이름1', price: 10000, img: 'img/item1.jpg' },
+            { name: '상품 이름2', price: 20000, img: 'img/item2.jpg' },
+            { name: '상품 이름3', price: 15000, img: 'img/item3.jpg' },
+            { name: '상품 이름4', price: 50000, img: 'img/item4.jpg' }
+        ];
+
+        wishlistItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'wishlist-item';
+            itemElement.innerHTML = `
+                <div class="heart-icon"></div>
+                <img src="${item.img}" alt="${item.name}">
+                <span>${item.name}</span>
+                <span>${item.price}원</span>
+                <div class="actions">
+                    <button class="buy-button" data-item='${JSON.stringify(item)}'>구매하기</button>
+                    <button>취소</button>
+                </div>
+            `;
+            wishlistItemsContainer.appendChild(itemElement);
+        });
+
+        wishlistCountContainer.textContent = wishlistItems.length;
+
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = JSON.parse(this.getAttribute('data-item'));
+                localStorage.setItem('cartItems', JSON.stringify([item]));
+                localStorage.setItem('totalPrice', item.price);
+                window.location.href = 'checkout.html';
+            });
+        });
+    }
+
+    if (document.getElementById('cart-items')) {
+        loadCartItems();
+    }
+
+    if (document.getElementById('wishlist-items')) {
+        loadWishlistItems();
+    }
+
+    if (document.getElementById('order-items')) {
+        const orderItemsContainer = document.getElementById('order-items');
+        const orderTotalContainer = document.getElementById('order-total-price');
+        const cartItems = JSON.parse(localStorage.getItem('cartItems'));
+        const totalPrice = localStorage.getItem('totalPrice');
+
+        cartItems.forEach(item => {
+            const itemElement = document.createElement('div');
+            itemElement.className = 'order-item';
+            itemElement.innerHTML = `
+                <span>${item.name}</span>
+                <span>${item.price}원</span>
+                <span>수량: ${item.quantity}</span>
+            `;
+            orderItemsContainer.appendChild(itemElement);
+        });
+
+        orderTotalContainer.textContent = `${totalPrice} 원`;
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('결제가 완료되었습니다.');
+            localStorage.removeItem('cartItems');
+            localStorage.removeItem('totalPrice');
+            window.location.href = 'index.html';
+        });
+    }
+});
+
+
+
+
+
+
 
 
 

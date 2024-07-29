@@ -212,8 +212,8 @@ p {
 .review-content {
   display: none;
   margin:10px;
-  height: 80px;
-  background-color: rgb(155, 155, 155);
+  height: 85px;
+  background-color: none;
 }
 
 .review-content.active {
@@ -281,15 +281,57 @@ p {
   display: block;
 }
 
-.trade-content {
-
-}
-
 .trade-picture {
   background-color: #ccc;
   width: 140px;
   height: 120px;
   margin: 0 50px;
+}
+
+.product-container { /* in 리뷰관리*/
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid #000;
+  padding: 20px;
+}
+
+.image-space {
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.image-space img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.product-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-name, .product-price, .purchase-date {
+  margin-bottom: 3px;
+}
+
+.review-plus {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.review-plus:hover {
+  background-color: #0056b3;
 }
 
 .column1 {

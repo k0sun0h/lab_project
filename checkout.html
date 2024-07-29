@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/checkout.css">
+</head>
+<body>
+    <header class="top-bar">
+        <img src="./img/Logo.png" alt="로고" class="logo">
+        <div class="top-bar-buttons" id="top-bar-buttons"></div>
+    </header>
+    <main class="checkout-content">
+        <h1>결제</h1>
+        <div class="order-summary">
+            <h2>주문 요약</h2>
+            <div id="order-items">
+                <!-- 주문 아이템들이 여기에 동적으로 추가될 것입니다 -->
+            </div>
+            <div class="order-total">
+                <span>총 금액: <span id="order-total-price">0000</span> 원</span>
+            </div>
+        </div>
+        <div class="payment-info">
+            <h2>결제 정보</h2>
+            <form id="payment-form">
+                <label for="card-number">카드 번호:</label>
+                <input type="text" id="card-number" required>
+                <label for="expiry-date">유효 기간:</label>
+                <input type="text" id="expiry-date" required>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" required>
+                <button type="submit">결제하기</button>
+            </form>
+        </div>
+    </main>
+    <script defer src="./js/script.js"></script>
+</body>
+</html>

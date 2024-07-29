@@ -5,8 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>장바구니</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 <body>
-    
+    <header class="top-bar">
+        <img src="./img/Logo.png" alt="로고" class="logo">
+        <div class="top-bar-buttons" id="top-bar-buttons"></div>
+    </header>
+    <main class="cart-content">
+        <h1>장바구니 (메인)</h1>
+        <div class="tab-menu">
+            <button class="tab active" onclick="openTab(event, 'items')">상품</button>
+            <button class="tab" onclick="openTab(event, 'wishlist')">찜한 상품</button>
+        </div>
+        <div id="items" class="tab-content active">
+            <h2>상품 (<span id="item-count">0</span>개)</h2>
+            <div class="cart-items" id="cart-items">
+                <!-- 장바구니 아이템들이 여기에 동적으로 추가될 것입니다 -->
+            </div>
+        </div>
+        <div id="wishlist" class="tab-content">
+            <h2>찜한 상품 (<span id="wishlist-count">0</span>개)</h2>
+            <div class="wishlist-items" id="wishlist-items">
+                <!-- 찜한 상품 아이템들이 여기에 동적으로 추가될 것입니다 -->
+            </div>
+        </div>
+        <div class="cart-summary">
+            <span>합계: <span id="total-price">0000</span> 원</span>
+            <button id="checkout-button">구매하기</button>
+        </div>
+    </main>
+    <script defer src="./js/script.js"></script>
 </body>
 </html>
